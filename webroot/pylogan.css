@@ -1,0 +1,19 @@
+h2
+{
+  color: grey;
+} 
+
+td.property
+{
+  text-align: left;
+}
+
+td.separator
+{
+  width: 14px;
+}
+
+td.value
+{
+  text-align: right;
+}

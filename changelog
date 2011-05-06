@@ -1,0 +1,17 @@
+0.2.3(should)
+-Implement the use of external configuration file.
+-Extend check of REs in syslog lines import.
+
+0.2.2
+-General sanitizing
+
+0.2.1
+-Sorting of results and byte grouping in KB, MB, etc (thanks Abel!)
+-Sanitized output.py and bin
+-Some fixes to setup.py (for the .tar.gz creation)
+
+0.2.0
+Initial release
+
+0.1.0
+Everything changes...

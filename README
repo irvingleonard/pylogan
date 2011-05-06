@@ -1,0 +1,38 @@
+PyLogAn Readme
+
+This tool is a Log Analyzer. It is inspired by the modlogan idea of isolate input,
+process and output.
+It was created because of the need of a log analyzer for squid that use the
+syslog lines. The only option the author find was modlogan but it is
+discontinuated.
+The goal was to get a good code, capable of been developed and to solve the needs
+of the author that were three traffic reports: user report, domain report and
+navigation (user + source ip + domain) report.
+The author have almost no time to spend on it but belives that it worth the
+effort, there are a lot of posibilities and maybe is good to write it here.
+Here it goes...
+Big ToDo:
+-The need to remove a lot of indexing in favour of DOM native capabilities, just
+need an easy and simple way of validation (like doc.validate() in PHP)
+-Remove the abuse of dictionaries in favour of tuples and lists, there are a lot
+of interfaces in output that works better with lists of tuples (to get a sort,
+for example)
+-The whole cosmetic job, work with the CSS to make it look pretty
+-Attach the code text strings to some kind of internationalization (like i18n
+maybe, don't know)
+-Change all the paths build to work with the os module
+-Review all the text and correct the author's poor english ;-)
+
+Simple ToDo:
+-Make the reports to work sorted
+-Format the table for a better reading
+-Make the table heading dinamic (now it only shows 'Usuarios')
+-Extend the inline doc (__doc__)
+
+Ideal ToDo:
+-Make more reports (more processing)
+-Support of detailed reports (with hyperlinks)
+-Implementation of real RRD backend, with partial updates (maybe saving the file
+pos in a separate file)
+-Implementation of other inputs and outputs (SQL,XML,SOAP,plane text,etc.)
+-Work in the bin file (use configuration file, accept parameters, etc.)
