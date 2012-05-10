@@ -1,12 +1,9 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 
 import string
 import re
-import time
+from . import time
 import copy
-from pylogan_exception import *
+from .pylogan_exception import *
 
 
 class SyslogLine(object):
@@ -57,29 +54,29 @@ class Syslog(object):
     else:
       raise SyslogInputError("Line doesn't match with syslog format: <line>{0}</line>".format(the_line))
 
-  def PopulateLines(self):
+	def PopulateLines(self):
     """Reads and parses all the lines in the file
     
     It uses the already opened file to read every line and parses it into SyslogLines storing it in self.lines
     """
     last_line=None
-    with open(self.file_path) as self.file:
-      for line in self.file:
-	try:
-	  line_result=self.ParseLine(line)
-	except SyslogInputError:
-	  if self.dbg: raise
-	else:
-	  if not self.start_timestamp:
-	    self.start_timestamp=line_result.timestamp
-	  self.lines.append(line_result)
-	  last_line=line_result
-    try:
-      self.end_timestamp=last_line.timestamp
-    except AttributeError:
-      raise SyslogInputError("There where no parseable lines at \"{0}\"".format(self.file_path))
-    else:
-      return self.lines
+		with open(self.file_path) as self.file:
+		for line in self.file:
+			try:
+				line_result=self.ParseLine(line)
+			except SyslogInputError:
+				if self.dbg: raise
+			else:
+				if not self.start_timestamp:
+					self.start_timestamp=line_result.timestamp
+				self.lines.append(line_result)
+				last_line=line_result
+			try:
+				self.end_timestamp=last_line.timestamp
+			except AttributeError:
+				raise SyslogInputError("There where no parseable lines at \"{0}\"".format(self.file_path))
+			else:
+				return self.lines
     
   def ExplodeLine(self,line,re_list):
     """Get squid related data from SyslogLine.data
@@ -154,7 +151,7 @@ class Squid(Syslog):
     if squid_line:
       isnumbered=re.match(self.squid_get_format,squid_line.group(2))
       if isnumbered:
-	print squid_line.group(2)
+	print(squid_line.group(2))
       #the_line.sourceIp=result.group(1)
       #the_line.squidEvent=result.group(2)
       #the_line.size=result.group(3)

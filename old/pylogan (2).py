@@ -7,7 +7,7 @@ import pylogext.output
 
 #Need of a configuration file, this variables should be stored there
 syslog_path='syslog'
-out_path='webroot/'
+out_path='webroot'
 
 page_title='Utilización del Proxy Squid'
 page_users_block_title='Tráfico por Usuarios'
@@ -24,7 +24,7 @@ test_log.SourceFile(syslog_path)
 test_log.PopulateLines()
 squid=pylogext.process.Squid()
 squid.UseSyslog(test_log)
-print squid.Consumption()
+print(squid.Consumption())
   #if resu:
     ##print resu
     #pass

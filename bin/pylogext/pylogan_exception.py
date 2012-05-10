@@ -1,1 +1,0 @@
-/home/irving/trabajo/software/pylogan/pylogan/logan_errors.py
