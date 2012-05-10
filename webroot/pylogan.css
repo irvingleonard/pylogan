@@ -3,17 +3,22 @@ h2
   color: grey;
 } 
 
+table.double
+{
+	width: 30%;
+}
+
+table.big
+{
+	width: 90%;
+}
+
 td.property
 {
   text-align: left;
 }
 
-td.separator
-{
-  width: 14px;
-}
-
-td.value
+.size
 {
   text-align: right;
 }

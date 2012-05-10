@@ -54,10 +54,12 @@ class SyslogLine:
 
 class SyslogFile:
 
-	def __init__(self, path = "messages", filter = None, load = True):
+	def __init__(self, path = "messages", filters = None, load = True):
 		self.path = path
 		self.lines = []
-		self.filter = filter
+		self.filters = filters
+		self.start_date = None
+		self.last_date = None
 		if load:
 			self._load()
 	
@@ -69,12 +71,22 @@ class SyslogFile:
 				except SyslogParseError:
 					pass	#do logging (TODO)
 				else:
-				# if not self.start_timestamp:
-					# self.start_timestamp=line_result.timestamp
-					if self.filter:
-						if self.filter == line_result.process:
-							self.lines.append(line_result)
-					else:
+					if self.filter(line_result):
+						if not self.start_date:
+							self.start_date = line_result.date
 						self.lines.append(line_result)
-					# last_line=line_result
-			
+						self.last_date = line_result.date
+		
+	def filter(self, line):
+		valid = True
+		if 'process' in self.filters.keys():
+			process_ok = False
+			for process in self.filters['process']:
+				if line.process == process:
+					process_ok = True
+			valid = valid and process_ok
+		if 'start_date' in self.filters.keys():
+			if line.date < self.filters['start_date']:
+				valid = False
+				
+		return valid
