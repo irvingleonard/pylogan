@@ -1,6 +1,6 @@
-PyLogAn Readme
+This is pylogan version 0.3.2
 
-This tool is a Log Analyzer. It is inspired by the modlogan idea of input,
+This script is a Log Analyzer. It is inspired by the modlogan idea of input,
 process and output isolation.
 
 It was created because of the need of a log analyzer for squid that use the
@@ -10,24 +10,14 @@ discontinuated. The goal was to get a good code, capable of been developed and t
 The author have almost no time to spend on it but belives that it worth the
 effort, there are a lot of posibilities and maybe is good to write it here.
 
-Here it goes...
-
-Present ToDo:
--Format the table for a better reading
--Extend the inline doc (__doc__)
--Fix the setup.py to work with python 3
-
-Big ToDo:
--Add lxml and do a lot more of getElementByID
--Remove the abuse of dictionaries in favour of tuples and lists, there are a lot
-of interfaces in output that works better with lists of tuples (to get a sort,
-for example)
--The whole cosmetic job, work with the CSS to make it look pretty
--Attach the code text strings to some kind of internationalization (like i18n
-maybe, don't know)
--Review all the text and correct the author's poor english ;-)
+Version 1.0.0 ToDo:
+- Add lxml and do a lot more of getElementByID or XPath OR use XQuery with ... (lxml?)
+- Remove the abuse of dictionaries in favour of tuples and lists.
+- The whole cosmetic job, work with the CSS to make it look pretty, format the tables for a better reading (CSS)
+- Use some kind of internationalization.
+- Review all the text and correct the author's poor english ;-)
 
 Future ToDo:
--Make more reports (more processing)
--Support of detailed reports (with hyperlinks)
--Implementation of other inputs and outputs (SQL,XML,SOAP,plane text,etc.)
+- Make more reports (more processing)
+- Support of detailed reports (with hyperlinks)
+- Implementation of other inputs and outputs (SQL, XML, SOAP, plane text, etc.)

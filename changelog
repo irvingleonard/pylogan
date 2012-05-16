@@ -1,22 +1,26 @@
-2.1.0
--Squid use summary
--Top tens (users, sites, navigations)
+0.3.2
+- Initial doc strings
+- Fix the nasty bug with the no lines state and the html dates
 
-2.0.0
--Complete rewrite
--Working
+0.3.1
+- Squid use summary
+- Top tens (users, sites, navigations)
 
-0.2.3(should)
--Implement the use of external configuration file.
--Extend check of REs in syslog lines import.
+0.3.0
+- Complete rewrite
+- Working syslog input
+
+0.2.3(should)[never released]
+- Implement the use of external configuration file.
+- Extend check of REs in syslog lines import.
 
 0.2.2
--General sanitizing
+- General sanitizing
 
 0.2.1
--Sorting of results and byte grouping in KB, MB, etc (thanks Abel!)
--Sanitized output.py and bin
--Some fixes to setup.py (for the .tar.gz creation)
+- Sorting of results and byte grouping in KB, MB, etc (thanks Abel!)
+- Sanitized output.py and bin
+- Some fixes to setup.py (for the .tar.gz creation)
 
 0.2.0
 Initial release

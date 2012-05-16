@@ -1,2 +1,2 @@
 ﻿#Update log processing
-*/5 *   * * *   root    /usr/bin/python3 /opt/pylogan/bin/pylogan.py >> /var/log/pylogan.log
+*/5 *   * * *   root    /usr/bin/python3 /opt/pylogan/bin/logan.py >> /var/log/pylogan.log

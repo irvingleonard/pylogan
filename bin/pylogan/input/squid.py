@@ -2,6 +2,10 @@
 import re
 
 class SquidLine:
+	"""Syslog data parser
+	
+	Handles the squid data in syslog lines (the acces.log is yet to be done)
+	"""
 	
 	def __init__(self, content):
 		format = r'^\s*(?P<source_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+-\s+(?P<user>\S+)\s+(?P<timestamp>\[\S+\s+\S+])\s+"(?P<method>\S+)\s+(?P<url>\S+)\s+(?P<protocol>\S+)"\s+(?P<answer>\d+)\s+(?P<size>\d+)\s+(?P<squid_request>\S+):(?P<squid_action>\S+)$'
